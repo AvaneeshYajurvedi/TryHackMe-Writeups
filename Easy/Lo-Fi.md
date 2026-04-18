@@ -3,7 +3,8 @@
 > **Platform:** TryHackMe  
 > **Difficulty:** Easy  
 > **Category:** Web / LFI  
-> **Date Completed:** 2026-04-18 
+> **Date Completed:** 2026-04-18
+
 > **Room Link:** [https://tryhackme.com/room/lofi](https://tryhackme.com/room/lofi)
 
 ---
