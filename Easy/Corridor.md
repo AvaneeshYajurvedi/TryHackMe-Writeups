@@ -3,7 +3,7 @@
 > **Platform:** TryHackMe  
 > **Difficulty:** Easy  
 > **Category:** Web / IDOR  
-> **Date Completed:** 2025  
+> **Date Completed:** 2026-04-18 
 > **Room Link:** [https://tryhackme.com/room/corridor](https://tryhackme.com/room/corridor)
 
 ---
