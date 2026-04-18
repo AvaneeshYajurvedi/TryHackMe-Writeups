@@ -37,7 +37,6 @@ IDOR, MD5 hash recognition, hash encoding/decoding, boundary/edge case testing.
 
 Upon launching the challenge, a corridor with multiple doors is presented:
 
-![Corridor](corridor_hallway.png)
 
 Clicking on any door changes the URL to a path like:
 
