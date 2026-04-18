@@ -3,7 +3,7 @@
 > **Platform:** TryHackMe  
 > **Difficulty:** Easy  
 > **Category:** Web / FTP / SSH Bruteforce / Linux PrivEsc  
-> **Date Completed:** 2025  
+> **Date Completed:** 2026-04-18  
 > **Room Link:** [https://tryhackme.com/room/brooklynninenine](https://tryhackme.com/room/brooklynninenine)
 
 ---
