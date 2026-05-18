@@ -1,4 +1,4 @@
-# 🔐 RootMe
+#  RootMe
 
 > **Platform:** TryHackMe  
 > **Difficulty:** Easy  
@@ -8,7 +8,7 @@
 
 ---
 
-## 📋 Table of Contents
+##  Table of Contents
 
 1. [Room Overview](#room-overview)
 2. [Reconnaissance](#reconnaissance)
@@ -20,7 +20,7 @@
 
 ---
 
-## 🗺️ Room Overview
+##  Room Overview
 
 RootMe is a beginner-friendly CTF that chains a file upload extension bypass for initial RCE with a SUID Python binary for privilege escalation. The web server blocks `.php` uploads but accepts `.php5` — enough to execute a reverse shell. Once inside, Python with the SUID bit set allows an instant root shell using a one-liner from GTFOBins.
 
@@ -32,7 +32,7 @@ Nmap scanning, Gobuster directory fuzzing, file upload extension bypass, PHP rev
 
 ---
 
-## 🔍 Reconnaissance
+##  Reconnaissance
 
 ### Network Scanning
 
@@ -49,7 +49,7 @@ nmap 10.48.185.63 -sV -v
 
 ---
 
-## 🔎 Enumeration
+##  Enumeration
 
 ### Web Application
 
@@ -75,7 +75,7 @@ Two critical paths: `/panel` for uploading and `/uploads` for triggering the she
 
 ---
 
-## 💥 Exploitation
+##  Exploitation
 
 ### Vulnerability
 
@@ -93,7 +93,7 @@ Using the pentestmonkey PHP reverse shell, set the attacker IP and port, then sa
 
 **Step 2 — Upload via `/panel`**
 
-Upload `shell.php5` — the `.php` extension is rejected, but `.php5` is accepted. ✅
+Upload `shell.php5` — the `.php` extension is rejected, but `.php5` is accepted. 
 
 **Step 3 — Start the listener**
 
@@ -126,7 +126,7 @@ cat /var/www/user.txt
 
 ---
 
-## ⬆️ Privilege Escalation
+##  Privilege Escalation
 
 ### SUID Binary Enumeration
 
@@ -144,7 +144,7 @@ Python with the SUID bit set can execute code as root. This is a well-documented
 python -c 'import os;os.execl("/bin/bash", "sh", "-p")'
 ```
 
-The `-p` flag tells bash to preserve effective UID (the SUID root). ✅
+The `-p` flag tells bash to preserve effective UID (the SUID root). 
 
 ```bash
 whoami
@@ -159,7 +159,7 @@ cat /root/root.txt
 
 ---
 
-## 🚩 Flags
+##  Flags
 
 | Flag | Value |
 |------|-------|
@@ -168,7 +168,7 @@ cat /root/root.txt
 
 ---
 
-## 💡 Key Takeaways
+##  Key Takeaways
 
 - **Extension blacklists are not a reliable upload defence.** Blocking `.php` while allowing `.php5`, `.php4`, `.phtml`, `.phar`, or `.shtml` is a common misconfiguration — always whitelist only what's needed rather than blacklisting known bad extensions.
 - **Publicly accessible upload directories make RCE trivial.** Once a shell is uploaded, navigating to `/uploads/shell.php5` in the browser is all it takes to execute it. Upload directories should never be web-accessible, or at minimum should strip execution permissions.
@@ -190,7 +190,7 @@ cat /root/root.txt
 
 ---
 
-## 📚 References
+##  References
 
 - [GTFOBins — python](https://gtfobins.github.io/gtfobins/python/#suid)
 - [HackTricks — File Upload Bypass](https://book.hacktricks.xyz/pentesting-web/file-upload)
